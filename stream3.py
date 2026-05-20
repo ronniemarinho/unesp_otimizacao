@@ -1,10 +1,9 @@
+import json
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, db
 
-try:
-
-    if not firebase_admin._apps:
+if not firebase_admin._apps:
 
     firebase_config = json.loads(st.secrets["firebase"])
 
@@ -23,7 +22,3 @@ ref = db.reference("/")
 dados = ref.get()
 
 st.write(dados)
-
-except Exception as e:
-
-    st.error(e)
