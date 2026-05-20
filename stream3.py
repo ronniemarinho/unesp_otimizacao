@@ -62,7 +62,7 @@ if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_dict)
 
     firebase_admin.initialize_app(cred, {
-        "databaseURL": "https://esp32-fe8e3-default-rtdb.firebaseio.com"
+        "databaseURL": "https://esp32-fe8e3-default-rtdb.firebaseio.com/"
     })
 
 ref = db.reference("/teste")
