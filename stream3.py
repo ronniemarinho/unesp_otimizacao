@@ -65,11 +65,11 @@ if not firebase_admin._apps:
         "databaseURL": "https://esp32-fe8e3-default-rtdb.firebaseio.com"
     })
 
-#ref = db.reference("/")
-#dados = ref.get()
+ref = db.reference("/historico")
+dados = ref.get()
 
-#st.write(dados)
-st.success("Firebase conectado!")
+st.write(dados)
+
 ##################################################
 # TRANSFORMAR EM DATAFRAME
 ##################################################
