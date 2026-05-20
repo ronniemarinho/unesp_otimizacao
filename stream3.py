@@ -671,22 +671,22 @@ for i in range(len(melhor_prev)):
 
     valor = melhor_prev[i]
 
-    if valor < 0.8:
+    if valor < 0.6:
 
         estado = "Muito Úmido"
         decisao = "Irrigação desnecessária"
 
-    elif valor < 1.2:
+    elif valor < 0.7:
 
         estado = "Ideal"
         decisao = "Ambiente estável"
 
-    elif valor < 1.6:
+    elif valor < 0.8:
 
         estado = "Atenção"
         decisao = "Monitorar ambiente"
 
-    elif valor < 2.0:
+    elif valor < 0.9:
 
         estado = "Moderado"
         decisao = "Irrigação recomendada"
