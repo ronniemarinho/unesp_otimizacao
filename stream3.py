@@ -57,20 +57,18 @@ st_autorefresh(interval=4000, key="dadosfirebase")
 
 if not firebase_admin._apps:
 
-    cred = credentials.Certificate("firebase_key.json")
+    firebase_dict = dict(st.secrets["firebase"])
+
+    cred = credentials.Certificate(firebase_dict)
 
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://esp32-fe8e3-default-rtdb.firebaseio.com/'
+        "databaseURL": "https://esp32-fe8e3-default-rtdb.firebaseio.com/"
     })
 
-##################################################
-# LER DADOS DO FIREBASE
-##################################################
-
-ref = db.reference("/historico")
-
+ref = db.reference("/")
 dados = ref.get()
 
+st.write(dados)
 ##################################################
 # TRANSFORMAR EM DATAFRAME
 ##################################################
