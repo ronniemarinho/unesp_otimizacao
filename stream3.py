@@ -51,21 +51,27 @@ st_autorefresh(interval=4000, key="dadosfirebase")
 # CONEXÃO FIREBASE
 ##################################################
 
-import json
+# IMPORTANTE:
+# Baixe a chave JSON do Firebase e coloque
+# no mesmo diretório do projeto
 
 if not firebase_admin._apps:
 
-    firebase_config = dict(st.secrets["firebase"])
-
-    # 🔥 converte explicitamente para dict limpo
-    cred = credentials.Certificate(firebase_config)
+    cred = credentials.Certificate(
+    dict(st.secrets["gcp_service_account"]))
 
     firebase_admin.initialize_app(cred, {
-        "databaseURL": "https://unesp-496916-72f05-default-rtdb.firebaseio.com/"
+        'databaseURL': 'https://esp32-fe8e3-default-rtdb.firebaseio.com/'
     })
 
-ref = db.reference("/teste")
-dados = ref.get() or {}
+##################################################
+# LER DADOS DO FIREBASE
+##################################################
+
+ref = db.reference("/historico")
+
+dados = ref.get()
+
 ##################################################
 # TRANSFORMAR EM DATAFRAME
 ##################################################
@@ -807,3 +813,4 @@ ax2.legend(
 )
 
 st.pyplot(fig2)
+
