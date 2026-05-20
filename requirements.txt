@@ -7,3 +7,4 @@ seaborn
 firebase_admin
 plotly.express
 streamlit_autorefresh
+plotly
