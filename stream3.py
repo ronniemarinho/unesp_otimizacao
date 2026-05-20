@@ -55,21 +55,19 @@ st_autorefresh(interval=4000, key="dadosfirebase")
 # Baixe a chave JSON do Firebase e coloque
 # no mesmo diretório do projeto
 
+# CONEXÃO FIREBASE
 if not firebase_admin._apps:
 
-    firebase_dict = dict(st.secrets["firebase"])
-
-    cred = credentials.Certificate(firebase_dict)
+    cred = credentials.Certificate(st.secrets["firebase"])
 
     firebase_admin.initialize_app(cred, {
         "databaseURL": "https://unesp-496916-72f05-default-rtdb.firebaseio.com/"
     })
 
-ref = db.reference("/teste")
+ref = db.reference("/")
 dados = ref.get()
 
 st.write(dados)
-
 ##################################################
 # TRANSFORMAR EM DATAFRAME
 ##################################################
