@@ -6,25 +6,23 @@ try:
 
     if not firebase_admin._apps:
 
-        cred = credentials.Certificate(
-            dict(st.secrets["firebase"])
-        )
+    firebase_config = json.loads(st.secrets["firebase"])
 
-        firebase_admin.initialize_app(
-            cred,
-            {
-                "databaseURL":
-                "https://esp32-fe8e3-default-rtdb.firebaseio.com/"
-            }
-        )
+    cred = credentials.Certificate(firebase_config)
 
-    ref = db.reference("/")
+    firebase_admin.initialize_app(
+        cred,
+        {
+            "databaseURL":
+            "https://esp32-fe8e3-default-rtdb.firebaseio.com/"
+        }
+    )
 
-    dados = ref.get()
+ref = db.reference("/")
 
-    st.success("Conectado!")
+dados = ref.get()
 
-    st.write(dados)
+st.write(dados)
 
 except Exception as e:
 
