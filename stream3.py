@@ -65,7 +65,7 @@ if not firebase_admin._apps:
         "databaseURL": "https://esp32-fe8e3-default-rtdb.firebaseio.com"
     })
 
-ref = db.reference("/historico")
+ref = db.reference("/teste")
 dados = ref.get()
 
 st.write(dados)
