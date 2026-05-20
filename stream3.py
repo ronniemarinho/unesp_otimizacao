@@ -63,6 +63,9 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred, {
         "databaseURL": "https://unesp-496916-72f05-default-rtdb.firebaseio.com/"
     })
+
+ref = db.reference("/teste")
+dados = ref.get() or {}
 ##################################################
 # TRANSFORMAR EM DATAFRAME
 ##################################################
