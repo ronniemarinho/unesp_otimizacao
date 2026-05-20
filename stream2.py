@@ -19,7 +19,7 @@ sns.set_theme()
 # TÍTULO
 # ============================================================
 
-st.title("Sistema Inteligente Aplicado à Agricultura e Irrigação com Modelagem Dinâmica do VPD🌱")
+st.title("Sistema Inteligente de Irrigação com Modelagem Dinâmica do VPD🌱")
 
 col1, col2, col3 = st.columns([1,2,1])
 
