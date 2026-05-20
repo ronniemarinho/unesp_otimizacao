@@ -4,8 +4,6 @@ numpy
 matplotlib
 scikit-learn
 seaborn
-firebase_admin
-plotly.express
-streamlit_autorefresh
+firebase-admin
 plotly
-json
+streamlit-autorefresh
