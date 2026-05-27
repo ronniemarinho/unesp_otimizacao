@@ -227,7 +227,7 @@ else:
 # SIDEBAR
 # ============================================================
 
-st.sidebar.image("Logo_Unesp.png", use_container_width=True)
+st.sidebar.image("fels_lagoa.svg", use_container_width=True)
 
 
 
